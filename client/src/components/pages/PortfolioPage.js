@@ -1,5 +1,5 @@
 import React from 'react'
-import SingleProject from './SingleProject'
+import { SingleProject } from 'components'
 const projects = [
   {
     name: 'Aloha',
