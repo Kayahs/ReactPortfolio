@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { HomePage, AboutPage, PortfolioPage } from 'components'
+import { NavBar, HomePage, AboutPage, PortfolioPage } from 'components'
 
 const MainRouter = () => (
   <Router>
