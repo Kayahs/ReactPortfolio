@@ -3,11 +3,13 @@ const path = require("path")
 const chalk = require("chalk")
 const app = express()
 
-const root = path.resolve(__dirname, "../client/build")
+const root = path.resolve(__dirname, "../client/public")
 app.use(express.static(root))
 
 app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/index.html"), function(err) {
+  res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
+    err
+  ) {
     if (err) {
       res.status(500).send(err)
     }
