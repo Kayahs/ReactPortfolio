@@ -1,13 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { NavBar, HomePage, AboutPage, PortfolioPage } from 'components'
+import { Router, Route } from 'react-router-dom'
+import { HeaderContainer, HomePage, AboutPage, PortfolioPage, Resume } from 'components'
+import { history } from 'lib'
 
 const MainRouter = () => (
-  <Router>
+  <Router history={history}>
     <div className="App">
-      <Route path="/" component={NavBar} />
+      <HeaderContainer />
       <Route path="/" exact component={HomePage} />
       <Route path="/about" exact component={AboutPage} />
+      <Route path="/resume" component={Resume} />
       <Route path="/portfolio" exact component={PortfolioPage} />
     </div>
   </Router>
