@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom'
 const styles = {
   containerDiv: {
     textAlign: 'center',
-    width: '100%',
+    width: '50%',
     display: 'flex',
     justifyContent: 'space-around',
     margin: 'auto',
+    maxHeight: '',
   },
   linkBox: {
     color: '#fff',
