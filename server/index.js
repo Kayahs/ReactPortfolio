@@ -9,6 +9,7 @@ import corsConfig from './config/cors.js'
 import postgres from './config/postgres'
 import typeDefs from './gql/schema'
 import resolvers from './gql/resolvers'
+import { authUtil } from './utils'
 
 dotenv.config()
 
@@ -41,7 +42,8 @@ const apolloServer = new ApolloServer({
     return {
       app: { secret, cookieName },
       req,
-      postgres
+      postgres,
+      authUtil
     }
   },
   typeDefs,
