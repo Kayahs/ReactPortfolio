@@ -27,7 +27,6 @@
 
 .nav {
   color: #fff;
-  border: 1px solid #399bdb;
   padding: 5% 0;
   width: 100%;
   text-decoration: none;
@@ -36,7 +35,6 @@
 
 .active-nav {
   color: #399bdb;
-  border: 1px solid #fff;
 }
 
 @keyframes App-logo-spin {
