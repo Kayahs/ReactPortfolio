@@ -1,15 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const styles = {
   containerDiv: {
     textAlign: 'center',
-    width: '100%',
+    width: '50%',
     display: 'flex',
     justifyContent: 'space-around',
+    margin: 'auto',
+    maxHeight: '',
   },
   linkBox: {
-    color: '#FFF',
+    color: '#fff',
     border: '1px solid #399BDB',
     padding: '5% 0',
     width: '100%',
@@ -20,15 +22,18 @@ const styles = {
 
 const NavBar = () => (
   <div style={styles.containerDiv}>
-    <Link style={styles.linkBox} to="/">
+    <NavLink activeClassName={'active-nav'} className={'nav'} exact to="/">
       Home
-    </Link>
-    <Link style={styles.linkBox} to="/about">
+    </NavLink>
+    <NavLink activeClassName={'active-nav'} className={'nav'} to="/about">
       About
-    </Link>
-    <Link style={styles.linkBox} to="/portfolio">
+    </NavLink>
+    <NavLink activeClassName={'active-nav'} className={'nav'} to="/resume">
+      Resume
+    </NavLink>
+    <NavLink activeClassName={'active-nav'} className={'nav'} to="/portfolio">
       Portfolio
-    </Link>
+    </NavLink>
   </div>
 )
 
