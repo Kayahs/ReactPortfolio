@@ -1,6 +1,9 @@
-const { Pool } = require('pg')
-const squel = require('squel').useFlavour('postgres')
-const config = require('../config/default.json')
+import { Pool } from 'pg'
+import DE from 'squel'
+import config from '../config/default.json'
+// import options from '../config/options.json'
+
+const squel = DE.useFlavour('postgres')
 
 const userSeeds = [
   {
@@ -34,7 +37,7 @@ const seed = async () => {
     console.log('All Inserts Successful, Commiting Changes...')
     await pg.query('COMMIT')
     console.log('Changes Committed.')
-  } catch {
+  } catch (e) {
     await pg.query('ROLLBACK')
     throw e
   } finally {
