@@ -7,8 +7,8 @@
     "db:reset": "yarn db:drop && yarn db:up",
     "db:seed": "node scripts/babelScripts/seedStart.js",
     "db:ras": "yarn db:reset && yarn db:seed",
-    "init": "node init.js",
-    "deploy": "yarn init && yarn db:ras"
+    "initialize": "node scripts/babelScripts/initStart.js",
+    "deploy": "yarn initialize && yarn db:ras"
   },
   "name": "server",
   "version": "1.0.0",
