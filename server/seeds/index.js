@@ -3,7 +3,7 @@ import squel from 'squel'
 import config from '../config/default.json'
 import options from '../config/options.json'
 import dotenv from 'dotenv'
-import bcrypt, { hash } from 'bcryptjs'
+import bcrypt from 'bcryptjs'
 
 dotenv.config()
 
