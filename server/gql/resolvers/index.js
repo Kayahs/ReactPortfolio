@@ -1,3 +1,5 @@
 import queryResolvers from './query/queryResolvers'
-const AllResolvers = { ...queryResolvers }
+import mutationResolvers from './mutation/mutationResolvers'
+import unionResolvers from './union/unionResolvers'
+const AllResolvers = { ...queryResolvers, ...mutationResolvers, ...unionResolvers }
 export default AllResolvers

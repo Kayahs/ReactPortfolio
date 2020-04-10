@@ -10,6 +10,7 @@ import postgres from './config/postgres'
 import typeDefs from './gql/schema'
 import resolvers from './gql/resolvers'
 import { authUtil } from './utils'
+import { salt } from './config/options.json'
 
 dotenv.config()
 
@@ -40,7 +41,7 @@ if (process.env.NODE_ENV !== 'development') {
 const apolloServer = new ApolloServer({
   context: ({ req }) => {
     return {
-      app: { secret, cookieName },
+      app: { secret, cookieName, salt },
       req,
       postgres,
       authUtil

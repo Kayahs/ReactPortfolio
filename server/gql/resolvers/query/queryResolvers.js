@@ -1,13 +1,13 @@
 export default {
   Query: {
     async AllUsers(p, a, { app: { secret, cookieName }, req, postgres, authUtil }, i) {
-      const getUsers = {
+      const getUsersQ = {
         text: 'SELECT * FROM portfolio.users'
       }
 
-      const getUsersResults = await postgres.query(getUsers)
+      const getUsersR = await postgres.query(getUsers)
 
-      return getUsersResults.rows
+      return getUsersR.rows
     }
   }
 }

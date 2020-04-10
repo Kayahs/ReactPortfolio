@@ -11,6 +11,10 @@
 # production
 /client/build
 
+# options
+/server/config/options.json
+/server/.env
+
 # misc
 .DS_Store
 .env.local

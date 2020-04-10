@@ -1,12 +1,23 @@
-const { Pool } = require('pg')
-const squel = require('squel').useFlavour('postgres')
-const config = require('../config/default.json')
+import { Pool } from 'pg'
+import squel from 'squel'
+import config from '../config/default.json'
+import options from '../config/options.json'
+import dotenv from 'dotenv'
+import bcrypt from 'bcryptjs'
+
+dotenv.config()
+
+const defaultPassword = process.env.DEFAULT_PASSWORD
+
+const squelps = squel.useFlavour('postgres')
+
+const hashedPassword = bcrypt.hashSync(defaultPassword, options.salt)
 
 const userSeeds = [
   {
     fullname: 'Akshay Manchanda',
     email: 'akshaykmanchanda@gmail.com',
-    password: '$2a$12$C3fzh/z1u9PpTxjEPsK1SefXVritcsDfcL6ftQzWSkfgouSKR6BfS'
+    password: hashedPassword
   }
 ]
 
@@ -20,7 +31,7 @@ const seed = async () => {
     await Promise.all(
       userSeeds.map(userSeed =>
         pg.query(
-          squel
+          squelps
             .insert()
             .into('portfolio.users')
             .setFields(userSeed)
@@ -34,7 +45,7 @@ const seed = async () => {
     console.log('All Inserts Successful, Commiting Changes...')
     await pg.query('COMMIT')
     console.log('Changes Committed.')
-  } catch {
+  } catch (e) {
     await pg.query('ROLLBACK')
     throw e
   } finally {
