@@ -1,35 +1,25 @@
 import React from 'react'
 
 const styles = {
-  containerDiv: {
+  pageDiv: {
     width: '100%',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    textAlign: 'center',
+    justifyContent: 'space-between'
   },
-  fname: {
-    fontSize: '120px',
-    paddingTop: '10%',
-    lineHeight: '50px',
-  },
-  lname: {
-    fontSize: '120px',
-    paddingBottom: '2%',
-  },
-  title: {
-    fontSize: '50px',
-    paddingTop: '5%',
-  },
+  heroDiv: {
+    width: '100%',
+    alignSelf: 'flex-end'
+  }
 }
 
 const HomePage = () => {
   return (
-    <div style={styles.containerDiv}>
-      <div style={styles.fname}>Akshay</div>
-      <div style={styles.lname}>Manchanda</div>
-      <div style={styles.title}>Full Stack Developer</div>
+    <div style={styles.pageDiv}>
+      <div style={styles.heroDiv}>
+        <div>This is a test</div>
+      </div>
     </div>
   )
 }

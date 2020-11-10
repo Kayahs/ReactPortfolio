@@ -4,28 +4,28 @@ const styles = {
   listElement: {
     listStyle: 'none',
     display: 'flex',
-    width: '100%',
+    width: '100%'
   },
   portfolioText: {
-    width: '50%',
+    width: '50%'
   },
   imageContainer: {
-    width: '50%',
+    width: '50%'
   },
   portfolioImage: {
     width: '100%',
-    objectFit: 'contain',
+    objectFit: 'contain'
   },
   portfolioTitle: {
     fontSize: '40px',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   portfolioDesc: {
-    fontSize: '30px',
+    fontSize: '30px'
   },
   portfolioTech: {
-    fontSize: '20px',
-  },
+    fontSize: '20px'
+  }
 }
 
 const SingleProject = ({ pname, desc, tech }) => {
