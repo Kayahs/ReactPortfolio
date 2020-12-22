@@ -7,8 +7,7 @@ const styles = {
     width: '30%',
     display: 'flex',
     justifyContent: 'space-around',
-    marginRight: 'auto',
-    maxHeight: ''
+    marginRight: 'auto'
   }
 }
 

@@ -1,3 +1,12 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .App {
   color: #000;
   min-height: 100vh;
@@ -25,21 +34,25 @@
 
 .nav {
   color: #000;
-  padding: 5% 0;
   width: 100%;
   text-decoration: none;
   font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoNav {
+  color: #000;
+  text-decoration: none;
+}
+
+.logoNav:visited {
+  color: #000;
+  text-decoration: none;
 }
 
 .active-nav {
   color: #399bdb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-bottom: 5px solid #399bdb;
 }

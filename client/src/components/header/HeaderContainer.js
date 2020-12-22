@@ -13,7 +13,8 @@ const styles = {
 const HeaderContainer = () => (
   <div style={styles.headerDiv}>
     <NavBar />
-    <Logo /> <IconContainer />
+    <Logo />
+    <IconContainer />
   </div>
 )
 
