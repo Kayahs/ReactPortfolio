@@ -1,9 +1,20 @@
 import React from 'react'
-import { NavBar } from 'components'
+import { NavBar, Logo, IconContainer } from 'components'
+
+const styles = {
+  headerDiv: {
+    width: '100%',
+    display: 'flex',
+    margin: 'auto',
+    maxHeight: ''
+  }
+}
 
 const HeaderContainer = () => (
-  <div>
+  <div style={styles.headerDiv}>
     <NavBar />
+    <Logo />
+    <IconContainer />
   </div>
 )
 

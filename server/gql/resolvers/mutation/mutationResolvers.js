@@ -7,8 +7,15 @@ export default {
   Mutation: {
     async login(
       p,
-      { input: { email, password } },
-      { app: { secret, cookieName, salt }, req, postgres, authUtil },
+      {
+        input: { email, password }
+      },
+      {
+        app: { secret, cookieName, salt },
+        req,
+        postgres,
+        authUtil
+      },
       i
     ) {
       try {
@@ -40,8 +47,15 @@ export default {
     },
     async signup(
       p,
-      { input: { email, password, fullname } },
-      { app: { secret, cookieName, salt }, req, postgres, authUtil },
+      {
+        input: { email, password, fullname }
+      },
+      {
+        app: { secret, cookieName, salt },
+        req,
+        postgres,
+        authUtil
+      },
       i
     ) {
       try {

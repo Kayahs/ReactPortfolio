@@ -6,39 +6,39 @@ const styles = {
     height: '100%',
     display: 'flex',
     justifyContent: 'space-between',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   imgSection: {
-    width: '50%',
+    width: '50%'
   },
   aboutInfo: {
     width: '50%',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   aboutText: {
     textAlign: 'justify',
     padding: '2% 5%',
-    fontSize: '30px',
+    fontSize: '30px'
   },
   profileImage: {
     width: '100%',
-    height: 'auto',
+    height: 'auto'
   },
   iconImage: {
     width: '100%',
     height: 'auto',
-    maxHeight: '300px',
+    maxHeight: '300px'
   },
   icons: {
     margin: '0 auto',
     width: '50%',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   links: {
-    width: '200px',
-  },
+    width: '200px'
+  }
 }
 
 const AboutPage = () => (
