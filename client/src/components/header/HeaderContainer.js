@@ -1,21 +1,13 @@
 import React from 'react'
-import { NavBar, Logo, IconContainer } from 'components'
-
-const styles = {
-  headerDiv: {
-    width: '100%',
-    display: 'flex',
-    margin: 'auto',
-    maxHeight: ''
-  }
-}
+import { NavBar, Logo, IconContainer, SHeaderContainer } from 'components'
+import { history } from 'lib'
 
 const HeaderContainer = () => (
-  <div style={styles.headerDiv}>
+  <SHeaderContainer location={history.location}>
     <NavBar />
     <Logo />
     <IconContainer />
-  </div>
+  </SHeaderContainer>
 )
 
 export default HeaderContainer
