@@ -1,3 +1,5 @@
 export { default as SHomePage } from './SHomePage'
 export { default as SHomeHero } from './SHomeHero'
 export { default as SHeaderContainer } from './SHeaderContainer'
+export { default as SIconContainer } from './SIconContainer'
+export { default as SIcon } from './SIcon'
