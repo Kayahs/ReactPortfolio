@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
+import { SNavLink } from 'components'
 
 const styles = {
   containerDiv: {
@@ -13,21 +14,21 @@ const styles = {
 
 const NavBar = () => (
   <div style={styles.containerDiv}>
-    {/*<NavLink activeClassName={'active-nav'} className={'nav'} exact to="/">
+    {/*<SNavLink activeClassName={'active'} exact to="/">
       Home
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/resume">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/resume">
     Resume
-  </NavLink> */}
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/portfolio">
+  </SNavLink> */}
+    <SNavLink activeClassName={'active'} to="/portfolio">
       Portfolio
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/about">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/about">
       About
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/contact">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/contact">
       Contact
-    </NavLink>
+    </SNavLink>
   </div>
 )
 
