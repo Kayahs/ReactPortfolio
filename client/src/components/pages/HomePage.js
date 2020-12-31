@@ -1,5 +1,12 @@
 import React from 'react'
-import { SHomeHeroContainer, SHomePage, SHomeHero, SHomeCTA, SHomeHeroTop } from 'components'
+import {
+  SHomeHeroContainer,
+  SHomePage,
+  SHomeHero,
+  SHomeCTA,
+  SHomeHeroTop,
+  CTAButton
+} from 'components'
 import TypeIt from 'typeit-react'
 
 const HomePage = () => {
@@ -24,7 +31,11 @@ const HomePage = () => {
               }}
             />
           </SHomeHeroTop>
-          <SHomeCTA></SHomeCTA>
+          <SHomeCTA>
+            <CTAButton text="Come check out my work!" to="/portfolio" />
+            <CTAButton text="Learn more about me..." to="/about" />
+            <CTAButton text="Want to have a chat?" to="/contact" />
+          </SHomeCTA>
         </SHomeHero>
       </SHomeHeroContainer>
     </SHomePage>
