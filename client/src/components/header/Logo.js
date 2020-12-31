@@ -14,7 +14,7 @@ const styles = {
 
 const Logo = () => (
   <div style={styles.logoDiv}>
-    <NavLink class="logoNav" to="/">
+    <NavLink className="logoNav" to="/">
       AM
     </NavLink>
   </div>

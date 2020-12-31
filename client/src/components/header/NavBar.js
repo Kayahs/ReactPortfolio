@@ -1,34 +1,24 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-
-const styles = {
-  containerDiv: {
-    textAlign: 'center',
-    width: '30%',
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginRight: 'auto'
-  }
-}
+import { SNavLink, SNavBarContainer } from 'components'
 
 const NavBar = () => (
-  <div style={styles.containerDiv}>
-    {/*<NavLink activeClassName={'active-nav'} className={'nav'} exact to="/">
+  <SNavBarContainer>
+    {/*<SNavLink activeClassName={'active'} exact to="/">
       Home
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/resume">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/resume">
     Resume
-  </NavLink> */}
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/portfolio">
+  </SNavLink> */}
+    <SNavLink activeClassName={'active'} to="/portfolio">
       Portfolio
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/about">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/about">
       About
-    </NavLink>
-    <NavLink activeClassName={'active-nav'} className={'nav'} to="/contact">
+    </SNavLink>
+    <SNavLink activeClassName={'active'} to="/contact">
       Contact
-    </NavLink>
-  </div>
+    </SNavLink>
+  </SNavBarContainer>
 )
 
 export default NavBar
