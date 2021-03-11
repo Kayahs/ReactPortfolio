@@ -7,15 +7,8 @@ export default {
   Mutation: {
     async login(
       p,
-      {
-        input: { email, password }
-      },
-      {
-        app: { secret, cookieName, salt },
-        req,
-        postgres,
-        authUtil
-      },
+      { input: { email, password } },
+      { app: { secret, cookieName, salt }, req, postgres, authUtil },
       i
     ) {
       try {
@@ -47,15 +40,8 @@ export default {
     },
     async signup(
       p,
-      {
-        input: { email, password, fullname }
-      },
-      {
-        app: { secret, cookieName, salt },
-        req,
-        postgres,
-        authUtil
-      },
+      { input: { email, password, fullname } },
+      { app: { secret, cookieName, salt }, req, postgres, authUtil },
       i
     ) {
       try {
@@ -87,6 +73,19 @@ export default {
             return { message: e.message || e }
         }
       }
+    },
+    async sendEmail(p, { input: { to, subject, text, html } }, { transporter }, i) {
+      let info = await transporter.sendMail({
+        from: '"Fred Foo 👻" <foo@example.com>', // sender address
+        to: to, // list of receivers
+        subject: subject, // Subject line
+        text: text, // plain text body
+        html: html // html body
+      })
+
+      console.log(info)
+
+      return { message: 'Done sending email.' }
     }
   }
 }

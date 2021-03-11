@@ -10,11 +10,16 @@ export default gql`
   type Mutation {
     login(input: LoginInput!): LoginResult!
     signup(input: SignupInput!): LoginResult!
+    sendEmail(input: EmailInput!): EmailResponse!
   }
 
   type LoginResponse {
     csrfToken: String!
     user: User!
+  }
+
+  type EmailResponse {
+    message: String!
   }
 
   type Error {
@@ -36,5 +41,12 @@ export default gql`
     email: String!
     password: String!
     fullname: String!
+  }
+
+  input EmailInput {
+    to: String!
+    subject: String!
+    text: String!
+    html: String!
   }
 `
