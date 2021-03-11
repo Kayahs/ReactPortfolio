@@ -20,6 +20,8 @@ const app = express()
 const PORT = process.env.NODE_ENV === 'development' ? process.env.DEV_PORT : 3000
 const secret = process.env.JWT_SECRET
 const cookieName = process.env.JWT_COOKIE_NAME
+const smtpEmail = process.env.SMTP_EMAIL
+const smtpPass = process.env.SMTP_PASSWORD
 
 app.use(cookieParser())
 
@@ -41,36 +43,20 @@ if (process.env.NODE_ENV !== 'development') {
 
 const apolloServer = new ApolloServer({
   context: async ({ req }) => {
-    console.log('Context creation started')
-    let testAccount = await nodemailer.createTestAccount()
-
     let transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      service: 'gmail',
       auth: {
-        user: testAccount.user, // generated ethereal user
-        pass: testAccount.pass // generated ethereal password
+        user: smtpEmail,
+        pass: smtpPass
       }
     })
-
-    console.log('Created Transport')
-
-    let info = await transporter.sendMail({
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: 'moolcool123@gmail.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world?', // plain text body
-      html: '<b>Hello world?</b>' // html body
-    })
-
-    console.log(info)
 
     return {
       app: { secret, cookieName, salt },
       req,
       postgres,
-      authUtil
+      authUtil,
+      transporter
     }
   },
   typeDefs,
