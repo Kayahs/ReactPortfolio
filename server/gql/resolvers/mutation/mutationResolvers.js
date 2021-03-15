@@ -76,11 +76,11 @@ export default {
     },
     async sendEmail(p, { input: { to, subject, text, html } }, { transporter }, i) {
       let info = await transporter.sendMail({
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: to, // list of receivers
-        subject: subject, // Subject line
-        text: text, // plain text body
-        html: html // html body
+        from: '"Akshay Manchanda" <akshaykmanchanda@gmail.com>',
+        to: to,
+        subject: subject,
+        text: text,
+        html: `<p>${html}</p>`
       })
 
       console.log(info)
