@@ -5,6 +5,7 @@ import path from 'path'
 import chalk from 'chalk'
 import { ApolloServer } from 'apollo-server-express'
 import dotenv from 'dotenv'
+import nodemailer from 'nodemailer'
 import corsConfig from './config/cors.js'
 import postgres from './config/postgres'
 import typeDefs from './gql/schema'
@@ -19,6 +20,8 @@ const app = express()
 const PORT = process.env.NODE_ENV === 'development' ? process.env.DEV_PORT : 3000
 const secret = process.env.JWT_SECRET
 const cookieName = process.env.JWT_COOKIE_NAME
+const smtpEmail = process.env.SMTP_EMAIL
+const smtpPass = process.env.SMTP_PASSWORD
 
 app.use(cookieParser())
 
@@ -29,8 +32,8 @@ if (process.env.NODE_ENV !== 'development') {
 
   app.use(express.static(root))
 
-  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/public/index.html'), function (err) {
       if (err) {
         res.status(500).send(err)
       }
@@ -39,12 +42,21 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 const apolloServer = new ApolloServer({
-  context: ({ req }) => {
+  context: async ({ req }) => {
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: smtpEmail,
+        pass: smtpPass
+      }
+    })
+
     return {
       app: { secret, cookieName, salt },
       req,
       postgres,
-      authUtil
+      authUtil,
+      transporter
     }
   },
   typeDefs,
@@ -66,6 +78,6 @@ const server = app.listen(PORT, () => {
   console.log(`>> ${chalk.magenta('GraphQL playground:')} http://localhost:${PORT}/graphql`)
 })
 
-server.on('error', err => {
+server.on('error', (err) => {
   console.log(err)
 })
