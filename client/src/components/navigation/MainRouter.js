@@ -1,6 +1,13 @@
 import React from 'react'
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
-import { HeaderContainer, HomePage, AboutPage, PortfolioPage, Resume } from 'components'
+import {
+  HeaderContainer,
+  HomePage,
+  AboutPage,
+  PortfolioPage,
+  Resume,
+  ContactPage
+} from 'components'
 import { history } from 'lib'
 
 const MainRouter = () => (
@@ -12,6 +19,7 @@ const MainRouter = () => (
         <Route path="/about" exact component={AboutPage} />
         <Route path="/resume" component={Resume} />
         <Route path="/portfolio" exact component={PortfolioPage} />
+        <Route path="/contact" exact component={ContactPage} />
         <Redirect to="/" />
       </Switch>
     </div>
