@@ -35,7 +35,7 @@ const ContactPage = () => {
       })
       resetForm()
       setSubmitting(false)
-      alert('Thank your for reaching out.')
+      alert('Thank you for reaching out.')
     },
     validationSchema: Yup.object().shape({
       fullname: Yup.string().required('required'),
