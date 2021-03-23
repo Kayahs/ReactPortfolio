@@ -27,19 +27,19 @@ app.use(cookieParser())
 
 app.use(cors(corsConfig))
 
-if (process.env.NODE_ENV !== 'development') {
-  const root = path.resolve(__dirname, '../client/build')
+// if (process.env.NODE_ENV !== 'development') {
+//   const root = path.resolve(__dirname, '../client/build')
 
-  app.use(express.static(root))
+//   app.use(express.static(root))
 
-  app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'), function (err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    })
-  })
-}
+//   app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../client/build/index.html'), function (err) {
+//       if (err) {
+//         res.status(500).send(err)
+//       }
+//     })
+//   })
+// }
 
 const apolloServer = new ApolloServer({
   context: async ({ req }) => {
