@@ -1,3 +1,4 @@
+import { SLogo, SLogoLink } from 'components'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -13,11 +14,9 @@ const styles = {
 }
 
 const Logo = () => (
-  <div style={styles.logoDiv}>
-    <NavLink className="logoNav" to="/">
-      AM
-    </NavLink>
-  </div>
+  <SLogo>
+    <SLogoLink to="/">AM</SLogoLink>
+  </SLogo>
 )
 
 export default Logo

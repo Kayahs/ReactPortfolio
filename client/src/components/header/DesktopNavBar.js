@@ -1,8 +1,8 @@
 import React from 'react'
-import { SNavLink, SNavBarContainer } from 'components'
+import { SNavLink, SDesktopNavBar } from 'components'
 
-const NavBar = () => (
-  <SNavBarContainer>
+const DesktopNavBar = () => (
+  <SDesktopNavBar>
     {/*<SNavLink activeClassName={'active'} exact to="/">
       Home
     </SNavLink>
@@ -18,7 +18,7 @@ const NavBar = () => (
     <SNavLink activeClassName={'active'} to="/contact">
       Contact
     </SNavLink>
-  </SNavBarContainer>
+  </SDesktopNavBar>
 )
 
-export default NavBar
+export default DesktopNavBar
