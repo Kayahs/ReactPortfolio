@@ -1,10 +1,11 @@
 import React from 'react'
-import { NavBar, Logo, IconContainer, SHeaderContainer } from 'components'
+import { DesktopNavBar, MobileNavBar, Logo, IconContainer, SHeaderContainer } from 'components'
 import { history } from 'lib'
 
 const HeaderContainer = () => (
   <SHeaderContainer location={history.location}>
-    <NavBar />
+    <DesktopNavBar />
+    <MobileNavBar />
     <Logo />
     <IconContainer />
   </SHeaderContainer>

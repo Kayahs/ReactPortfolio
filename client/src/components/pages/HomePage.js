@@ -29,6 +29,9 @@ const HomePage = () => {
                   .type('Full Stack Developer.')
                 return instance
               }}
+              options={{
+                speed: 100
+              }}
             />
           </SHomeHeroTop>
           <SHomeCTA>

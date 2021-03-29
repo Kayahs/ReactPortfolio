@@ -31,13 +31,3 @@ body {
 .App-link {
   color: #61dafb;
 }
-
-.logoNav {
-  color: #000;
-  text-decoration: none;
-}
-
-.logoNav:visited {
-  color: #000;
-  text-decoration: none;
-}

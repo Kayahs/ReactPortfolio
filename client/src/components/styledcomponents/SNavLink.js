@@ -14,6 +14,10 @@ const SNavLink = styled(NavLink)`
     color: #399bdb;
     border-bottom: 5px solid #399bdb;
   }
+
+  &.drawerLink {
+    margin: 5%;
+  }
 `
 
 export default SNavLink
