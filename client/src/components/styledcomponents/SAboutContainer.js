@@ -6,6 +6,11 @@ const SAboutContainer = styled.div`
   display: flex;
   justify-content: space-between;
   text-align: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export default SAboutContainer

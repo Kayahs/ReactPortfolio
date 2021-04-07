@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const SAboutSection = styled.div`
-  width: 50%;
+  width: 100%;
 `
 
 export default SAboutSection
