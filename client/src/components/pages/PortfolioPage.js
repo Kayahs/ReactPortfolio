@@ -1,5 +1,6 @@
 import React from 'react'
-import { SingleProject } from 'components'
+import { SingleProject, SPortfolioList } from 'components'
+
 const projects = [
   {
     name: 'Aloha',
@@ -54,11 +55,11 @@ const projects = [
 ]
 const PorfolioPage = () => (
   <div>
-    <ul>
-      {projects.map(project => (
+    <SPortfolioList>
+      {projects.map((project) => (
         <SingleProject pname={project.name} desc={project.desc} tech={project.tech} />
       ))}
-    </ul>
+    </SPortfolioList>
   </div>
 )
 
