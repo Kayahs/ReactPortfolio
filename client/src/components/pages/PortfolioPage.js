@@ -53,10 +53,11 @@ const projects = [
     tech: ['React Native', 'Material UI', 'GraphQL', 'Apollo', 'PostGres']
   }
 ]
+const reversed = projects.reverse()
 const PorfolioPage = () => (
   <div>
     <SPortfolioList>
-      {projects.map((project) => (
+      {reversed.map((project) => (
         <SingleProject pname={project.name} desc={project.desc} tech={project.tech} />
       ))}
     </SPortfolioList>
